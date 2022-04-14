@@ -7,6 +7,7 @@
 * [과제 제출 방법](https://github.com/next-step/nextstep-docs/tree/master/precourse)
 ---
 ## 기능 목록
+- 게임 진행 시스템 메세지 출력 기능
 - 게임 시작 기능
 - 숫자 생성 기능
   - 컴퓨터 숫자 자동 생성 기능
