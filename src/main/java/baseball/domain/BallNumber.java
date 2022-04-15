@@ -1,5 +1,6 @@
 package baseball.domain;
 
+import baseball.common.SystemMessage;
 import camp.nextstep.edu.missionutils.Randoms;
 
 import java.util.regex.Pattern;
@@ -40,7 +41,7 @@ public class BallNumber {
     private void numberValidation(String value) {
 
         if(!Pattern.matches("^[0-9]*$", value)) {
-            throw new IllegalArgumentException("숫자를 입력해 주세요.");
+            throw new IllegalArgumentException(SystemMessage.NUMBER_EXCEPTION);
         }
 
     }
