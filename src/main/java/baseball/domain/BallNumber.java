@@ -27,6 +27,8 @@ public class BallNumber {
 
     public BallNumber(String userBallNumber) {
 
+        sizeValidation(userBallNumber);
+
         this.ballNumber = new int[BALL_SIZE];
 
         for(int index = 0 ; index < BALL_SIZE ; index++) {
@@ -72,6 +74,11 @@ public class BallNumber {
 
     }
 
+    private void sizeValidation(String value) {
+        if(BALL_SIZE != value.length()) {
+            throw new IllegalArgumentException(SystemMessage.SIZE_EXCEPTION);
+        }
+    }
 
     private void printBallNumber() {
 

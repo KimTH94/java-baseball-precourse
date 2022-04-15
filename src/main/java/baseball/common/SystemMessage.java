@@ -9,5 +9,6 @@ public class SystemMessage {
 
     public static final String NUMBER_EXCEPTION = "숫자만 입력해주세요.";
     public static final String DUPLICATE_EXCEPTION = "서로 다른 숫자를 입력해주세요.";
+    public static final String SIZE_EXCEPTION = "3자리의 수를 입력해주세요.";
 
 }
