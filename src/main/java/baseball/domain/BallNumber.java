@@ -34,6 +34,8 @@ public class BallNumber {
             ballNumber[index] = (int) userBallNumber.charAt(index) - '0';
         }
 
+        duplicateValidation();
+
         printBallNumber();
 
     }
@@ -45,6 +47,31 @@ public class BallNumber {
         }
 
     }
+
+    private void duplicateValidation() {
+
+        for(int index = 0 ; index < BALL_SIZE ; index++) {
+            deplicateValue(index + 1, ballNumber[index]);
+        }
+
+    }
+
+    private void deplicateValue(int startIndex, int value) {
+
+        for(int index = startIndex ; index < BALL_SIZE ; index++) {
+            isEqual(ballNumber[index], value);
+        }
+
+    }
+
+    private void isEqual(int param1, int param2) {
+
+        if(param1 == param2) {
+            throw new IllegalArgumentException(SystemMessage.DUPLICATE_EXCEPTION);
+        }
+
+    }
+
 
     private void printBallNumber() {
 
