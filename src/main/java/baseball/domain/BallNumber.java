@@ -22,6 +22,17 @@ public class BallNumber {
 
     }
 
+    public BallNumber(String userBallNumber) {
+
+        this.ballNumber = new int[BALL_SIZE];
+
+        for(int index = 0 ; index < BALL_SIZE ; index++) {
+            ballNumber[index] = (int) userBallNumber.charAt(index) - '0';
+        }
+
+        printBallNumber();
+    }
+
     private void printBallNumber() {
 
         for(int index = 0 ; index < BALL_SIZE ; index++) {
