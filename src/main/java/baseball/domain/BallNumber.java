@@ -2,6 +2,8 @@ package baseball.domain;
 
 import camp.nextstep.edu.missionutils.Randoms;
 
+import java.util.regex.Pattern;
+
 public class BallNumber {
 
     public static final int MIN_VALUE = 1;
@@ -27,10 +29,20 @@ public class BallNumber {
         this.ballNumber = new int[BALL_SIZE];
 
         for(int index = 0 ; index < BALL_SIZE ; index++) {
+            numberValidation(String.valueOf(userBallNumber.charAt(index)));
             ballNumber[index] = (int) userBallNumber.charAt(index) - '0';
         }
 
         printBallNumber();
+
+    }
+
+    private void numberValidation(String value) {
+
+        if(!Pattern.matches("^[0-9]*$", value)) {
+            throw new IllegalArgumentException("숫자를 입력해 주세요.");
+        }
+
     }
 
     private void printBallNumber() {
@@ -39,6 +51,7 @@ public class BallNumber {
             System.out.print(ballNumber[index] + " ");
         }
         System.out.println();
+
     }
 
 }
