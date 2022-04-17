@@ -21,7 +21,7 @@ public class BallNumber {
         this.check = new boolean[MAX_VALUE];
 
         for(int index = 0 ; index < BALL_SIZE ; index++) {
-            ballNumber[index] = Randoms.pickNumberInRange(MIN_VALUE, MAX_VALUE);
+            ballNumber[index] = inputComputerBallNumber();
         }
 
         printBallNumber();
@@ -45,6 +45,17 @@ public class BallNumber {
 
         printBallNumber();
 
+    }
+
+    private int inputComputerBallNumber() {
+
+        int input = Randoms.pickNumberInRange(MIN_VALUE,MAX_VALUE);
+
+        while(check[input - 1]) {
+            input = Randoms.pickNumberInRange(MIN_VALUE,MAX_VALUE);
+        }
+
+        return input;
     }
 
     private void numberValidation(String value) {
