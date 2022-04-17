@@ -22,6 +22,7 @@ public class BallNumber {
 
         for(int index = 0 ; index < BALL_SIZE ; index++) {
             ballNumber[index] = inputComputerBallNumber();
+            check[ballNumber[index] - 1] = true;
         }
 
         printBallNumber();
