@@ -34,6 +34,7 @@ public class BallNumber {
         sizeValidation(userBallNumber);
 
         this.ballNumber = new int[BALL_SIZE];
+        this.check = new boolean[MAX_VALUE];
 
         for(int index = 0 ; index < BALL_SIZE ; index++) {
             rangeValidation(String.valueOf(userBallNumber.charAt(index)));
@@ -70,23 +71,17 @@ public class BallNumber {
     private void duplicateValidation() {
 
         for(int index = 0 ; index < BALL_SIZE ; index++) {
-            deplicateValue(index + 1, ballNumber[index]);
+            deplicateValue(ballNumber[index]);
         }
 
     }
 
-    private void deplicateValue(int startIndex, int value) {
+    private void deplicateValue(int value) {
 
-        for(int index = startIndex ; index < BALL_SIZE ; index++) {
-            isEqual(ballNumber[index], value);
-        }
-
-    }
-
-    private void isEqual(int param1, int param2) {
-
-        if(param1 == param2) {
+        if(check[value - 1]) {
             throw new ValidationBallNumberException(SystemMessage.DUPLICATE_EXCEPTION);
+        } else {
+            check[value - 1] = true;
         }
 
     }
