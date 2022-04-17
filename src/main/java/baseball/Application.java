@@ -1,6 +1,7 @@
 package baseball;
 
 import baseball.common.SystemMessage;
+import baseball.common.ValidationBallNumberException;
 import baseball.domain.BallNumber;
 import baseball.domain.Computer;
 import baseball.domain.Result;
@@ -41,8 +42,13 @@ public class Application {
     }
 
     private static void inputUserNumber() {
-       String userNumber = Console.readLine();
-       user.setBallNumber(new BallNumber(userNumber));
+       try {
+           String userNumber = Console.readLine();
+           user.setBallNumber(new BallNumber(userNumber));
+       } catch (ValidationBallNumberException e) {
+           e.printStackTrace();
+        }
+
     }
 
     private static void print(String message) {
