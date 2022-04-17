@@ -22,13 +22,13 @@ public class Application {
 
        print(SystemMessage.START_PROGRAM);
 
+       gameSetting();
+
        while(GAME_STATE != END) {
 
-           gameSetting();
            inputUserNumber();
            checkTurn();
 
-           GAME_STATE = END;
        }
 
         print(SystemMessage.END_PROGRAM);
@@ -37,11 +37,12 @@ public class Application {
     private static void gameSetting() {
         computer = new Computer();
         user = new User();
-
-        System.out.println(SystemMessage.START_GAME);
     }
 
     private static void inputUserNumber() {
+
+       System.out.println(SystemMessage.START_GAME);
+
        try {
            String userNumber = Console.readLine();
            user.setBallNumber(new BallNumber(userNumber));
@@ -80,6 +81,7 @@ public class Application {
        }
 
        print(SystemMessage.START_GAME);
+       gameSetting();
 
     }
 
