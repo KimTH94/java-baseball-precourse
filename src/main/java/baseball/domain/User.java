@@ -7,7 +7,9 @@ public class User {
     public void setBallNumber(BallNumber ballNumber) {
         this.ballNumber = ballNumber;
     }
+
     public BallNumber getBallNumber() {
         return this.ballNumber;
     }
+
 }

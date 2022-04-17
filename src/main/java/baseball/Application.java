@@ -3,6 +3,7 @@ package baseball;
 import baseball.common.SystemMessage;
 import baseball.domain.BallNumber;
 import baseball.domain.Computer;
+import baseball.domain.Result;
 import baseball.domain.User;
 import camp.nextstep.edu.missionutils.Console;
 
@@ -17,13 +18,14 @@ public class Application {
     private static User user;
 
    public static void main(String[] args) {
-        print(SystemMessage.START_PROGRAM);
+
+       print(SystemMessage.START_PROGRAM);
 
        while(GAME_STATE != END) {
 
            gameSetting();
            inputUserNumber();
-
+           checkTurn();
            GAME_STATE = END;
        }
 
@@ -49,4 +51,11 @@ public class Application {
     private static void print(String message) {
         System.out.println(message);
     }
+
+    private static void checkTurn() {
+
+       Result result = new Result(computer.getBallNumber(), user.getBallNumber());
+
+    }
+
 }

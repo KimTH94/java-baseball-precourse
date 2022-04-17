@@ -80,6 +80,10 @@ public class BallNumber {
         }
     }
 
+    public int getNumberByIndex(int index) {
+        return ballNumber[index - 1];
+    }
+
     private void printBallNumber() {
 
         for(int index = 0 ; index < BALL_SIZE ; index++) {

@@ -8,4 +8,8 @@ public class Computer {
         this.ballNumber = new BallNumber();
     }
 
+    public BallNumber getBallNumber() {
+        return this.ballNumber;
+    }
+
 }
