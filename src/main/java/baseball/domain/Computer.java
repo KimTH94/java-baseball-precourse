@@ -2,7 +2,7 @@ package baseball.domain;
 
 public class Computer {
 
-    private BallNumber ballNumber;
+    protected BallNumber ballNumber;
 
     public Computer() {
         this.ballNumber = new BallNumber();
@@ -11,5 +11,4 @@ public class Computer {
     public BallNumber getBallNumber() {
         return this.ballNumber;
     }
-
 }
