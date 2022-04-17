@@ -79,6 +79,10 @@ public class Result {
             hint += strike + "스트라이크";
         }
 
+        if(ball == 0 && strike == 0) {
+            hint += "낫싱";
+        }
+
         return hint;
 
     }
