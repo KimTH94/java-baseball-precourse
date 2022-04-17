@@ -26,6 +26,7 @@ public class Application {
            gameSetting();
            inputUserNumber();
            checkTurn();
+
            GAME_STATE = END;
        }
 
@@ -40,12 +41,8 @@ public class Application {
     }
 
     private static void inputUserNumber() {
-        try {
-            String userNumber = Console.readLine();
-            user.setBallNumber(new BallNumber(userNumber));
-        } catch (Exception e) {
-            System.out.println(e.toString());
-        }
+       String userNumber = Console.readLine();
+       user.setBallNumber(new BallNumber(userNumber));
     }
 
     private static void print(String message) {
@@ -55,6 +52,28 @@ public class Application {
     private static void checkTurn() {
 
        Result result = new Result(computer.getBallNumber(), user.getBallNumber());
+
+       print(result.printHint());
+
+       if(result.strike == 3) {
+           finishGame();
+       }
+
+    }
+
+    private static void finishGame() {
+
+       print(SystemMessage.USER_WIN);
+       print(SystemMessage.GAME_FINISH);
+
+       String gameStatus = Console.readLine();
+
+       if(Integer.parseInt(gameStatus) == 2) {
+           GAME_STATE = END;
+           return;
+       }
+
+       print(SystemMessage.START_GAME);
 
     }
 

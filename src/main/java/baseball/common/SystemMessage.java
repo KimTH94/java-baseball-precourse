@@ -11,4 +11,7 @@ public class SystemMessage {
     public static final String DUPLICATE_EXCEPTION = "서로 다른 숫자를 입력해주세요.";
     public static final String SIZE_EXCEPTION = "3자리의 수를 입력해주세요.";
 
+    public static final String USER_WIN = "3개의 숫자를 모두 맞히셨습니다! 게임 종료";
+    public static final String GAME_FINISH = "게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.";
+
 }
